@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+    width: 1400px;
+}
+
+.header {
+    padding-bottom: 50px;
+}
+.header li {
+    display: inline;
+    padding-left: 20px;
+    color: #000;
+}
+.header ul.pull-left {
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding-top: 40px;
+    padding-left: 20px;
+}
+.header ul.pull-right li {
+    padding-left: 20px;
+}
+.header ul {
+    padding-top: 40px;
+    font-size: 15px;
+}
