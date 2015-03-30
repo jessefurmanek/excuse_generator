@@ -1,31 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ExcuseGenerator</title>
+  <title>No Excuse No Problem</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
- <div class="header">
-            <div class="container">
-                <ul class="pull-left">
-                    <li>No Excuse No Problem</li>
-                </ul>
-                <ul class="pull-right nav nav-pills">
-                    <li><a href="#" class="pink">Log In</a>
-
-                    </li>
-                    <li><a href="#" class="pink">Sign Up</a>
-
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-<%= yield %>
-
+    <%= render 'layouts/header' %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
 </body>
 </html>
 

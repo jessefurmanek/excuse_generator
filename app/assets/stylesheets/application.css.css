@@ -14,29 +14,70 @@
  *= require_self
  */
 
-.container {
-    width: 1400px;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+body {
+  padding-top: 60px;
 }
 
-.header {
-    padding-bottom: 50px;
+section {
+  overflow: auto;
 }
-.header li {
-    display: inline;
-    padding-left: 20px;
-    color: #000;
+
+textarea {
+  resize: vertical;
 }
-.header ul.pull-left {
-    color: #fff;
-    font-size: 25px;
-    text-transform: uppercase;
-    padding-top: 40px;
-    padding-left: 20px;
+
+.center {
+  text-align: center;
 }
-.header ul.pull-right li {
-    padding-left: 20px;
+
+.center h1 {
+  margin-bottom: 10px;
 }
-.header ul {
-    padding-top: 40px;
-    font-size: 15px;
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
 }
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+
+
+
+
