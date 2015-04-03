@@ -23,10 +23,6 @@ html {
   font-family: 'Josefin Sans', sans-serif;
 }
 
-body {
-  padding-top: 60px;
-}
-
 section {
   overflow: auto;
 }
@@ -41,6 +37,38 @@ textarea {
 
 .center h1 {
   margin-bottom: 10px;
+}
+
+/* header */
+
+header {
+  background-color: #00E8FF;
+  height: 60px;
+  line-height: 60px;
+}
+
+header ul {
+  list-style-type: none;
+}
+
+header li {
+  display: inline;
+  padding-left: 20px;
+}
+
+header a {
+  color: #FF6B00;
+  font-weight: bold;
+}
+
+ header a:hover {
+  color: #B24B00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header img {
+  width: 350px;
 }
 
 /* typography */
@@ -68,11 +96,6 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
-}
-
-a {
-  color: rgb(255, 107, 0);
-  text-decoration: none;
 }
 
 
