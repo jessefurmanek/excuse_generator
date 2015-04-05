@@ -1,17 +1,22 @@
 <h1>Fabricate Your Alibi</h1>
-
+<%= form_tag '/excuses', method: "post"  do |f| %>
 <p>Plausible?</p>
 <ul>
-	<li>Realistic</li>
-	<li>Unrealistic</li>
+  <%= radio_button_tag :is_realistic, 'realistic'%> 
+  <%= label :is_realistic, 'Yes please' %>
+  <%= radio_button_tag :is_realistic, 'unrealistic' %>
+  <%= label :is_realistic, 'Nope' %>
+	
 </ul>
 
 <p>When will you show up?</p>
 <ul>
-	<li>Late</li>
-	<li>Never</li>
+  <%= radio_button_tag :is_late, 'just_late'%> 
+  <%= label :is_late, 'Late' %>
+  <%= radio_button_tag :is_late, 'never_going' %>
+  <%= label :is_late, 'Never' %>
 </ul>
+	
+<%= submit_tag "Generate" %>
 
-<div class="btn">
-	Generate
-</div>
+<% end %>
