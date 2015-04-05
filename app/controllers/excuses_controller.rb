@@ -3,5 +3,7 @@ class ExcusesController < ApplicationController
   end
 
   def index
+    @excuses = Excuse.all
   end
+
 end
