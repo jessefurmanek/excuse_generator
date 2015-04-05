@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>No Excuse No Problem</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-    <%= render 'layouts/header' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
-</body>
+	<head>
+	  <title>No Excuse No Problem</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,300italic,400italic' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<%= render 'layouts/header' %>
+	    <%= yield %>
+	    <%= render 'layouts/footer' %>
+	</body>
 </html>
 
