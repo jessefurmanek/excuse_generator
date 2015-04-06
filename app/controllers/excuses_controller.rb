@@ -50,4 +50,11 @@ class ExcusesController < ApplicationController
     user == current_user
   end
 
+   private
+  
+ 	def excuse_params
+  	   params.require(:excuses).permit(:name, :is_realistic, :template, :image, :sound_fx)
+    end
+  	
+
 end
