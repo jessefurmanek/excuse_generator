@@ -73,7 +73,7 @@ e45 = Excuse.create(name: "imprinted", is_realistic: 0, template: "I can't go fa
 
 e46 = Excuse.create(name: "skunks", is_realistic: 0, template: "There are skunks nesting right outside my door and I get sprayed every time I leave. So, I could come to your event but I really don't think you want me to.", image: "skunk.jpg", sound_fx: "skunks.wav")
 
-e47 = Excuse.create(name: "zombies", is_realistic: 0, template: "I've been watching too many zombie movies and can't behave normally in public anymore.", image: "ombie.jpg", sound_fx: "zombie_movies.wav")
+e47 = Excuse.create(name: "zombies", is_realistic: 0, template: "I've been watching too many zombie movies and can't behave normally in public anymore.", image: "zombie.jpg", sound_fx: "zombie_movies.wav")
 
 e48 = Excuse.create(name: "werewolves", is_realistic: 0, template: "My neighborhood watch group is convinced that my neighbor's kids are werewolves. It's my turn this week to gather evidence.", image: "werewolf.jpg", sound_fx: "children_werewolves.wav")
 

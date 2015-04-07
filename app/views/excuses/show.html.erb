@@ -21,7 +21,10 @@
 
 <!-- Insert button to play and an option to loop -->
 
-<h1>Generate Again</h1>
+<div class = "regen-excuses"> 
+	<!-- is_realistic passes the current excuse parameter back to the controller -->
+	<%= link_to "Generate Again", {controller: "excuses", action: "regenerate", is_realistic: @excuse.is_realistic}, {class: "btn btn-lg btn-primary"} %>
+</div>	
 
 <div class = "all-excuses"> 
 	<%= link_to "All Excuses", '/excuses', class: "btn btn-lg btn-primary" %>
