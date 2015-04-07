@@ -14,40 +14,37 @@
                 </li>
             </ul>
         </div>
-        <div class="col-md-3">
-             <h1>Your excuse is:</h1>
-
+        <div class = "row">   
+            <div class="col-md-3">
+            </div> 
+            <div class="col-md-3">
+                <h1>Excuse:</h1>
+            </div>
+            <div class="col-md-3">            
+                <h2>What to say:</h2>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        
             <% @excuses.each do |excuse| %>
+        <div class = "row">
+            <div class="col-md-3"></div> 
+            <div class="col-md-3">
                 <p>
-                    <%= excuse.name %>
+                    <%= link_to excuse.name, excuse_path(excuse) %>
                 </p>
-                <% end %>
-        </div>
-        <div class="col-md-3">
-             <h1>Your image file:</h1>
-
-            <% @excuses.each do |excuse| %>
-                <%=image_tag excuse.image, id: "excuse_image" %>
-                    <% end %>
-        </div>
-        <!-- Insert our ruby image tag here -->
-        <div class="col-md-3">
-             <h2>Say this:</h2>
-
-            <% @excuses.each do |excuse| %>
+             </div>
+                
+            <div class="col-md-3">
                 <p>
                     <%=excuse.template %>
                 </p>
-                <% end %>
-        </div>
-        <!-- Insert ruby tag for DB here -->
-        <div class="col-md-3">
-             <h2>Alibi's soundbyte:</h2>
+            </div>
+            <div class="col-md-3"></div>             
 
-            <% @excuses.each do |excuse| %>
-                <%=audio_tag excuse.sound_fx, controls: true, loop: true %>
-                    <% end %>
         </div>
+            <% end %>
     </div>
     <!-- Insert button to play and an option to loop -->
 
