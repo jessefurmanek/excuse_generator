@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   get  'excuses/new'
   get  'excuses/all'  =>      'excuses#index'
   get  'excuses/regenerate'  =>      'excuses#regenerate'
+  post 'ratings/update'
 
   resources :users
   resources :excuses
+  resources :ratings
 
 
   # Example of regular route:

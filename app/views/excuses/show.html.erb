@@ -29,3 +29,23 @@
 <div class = "all-excuses"> 
 	<%= link_to "All Excuses", '/excuses', class: "btn btn-lg btn-primary" %>
 </div>	
+
+<div class = "rating">
+	<p>Your rating</p>
+	<div id="user_star"></div>
+</div>
+
+<script>;
+
+  $('#user_star').raty({
+    score: <%= @current_user_rating.score %>,
+    path: '/assets',
+    click: function(score, evt) {
+      $.ajax({
+        url: '/ratings/' + <%= @current_user_rating_id %>,
+        type: 'PATCH',
+        data: { score: score }
+      });
+    }
+  });
+</script>
