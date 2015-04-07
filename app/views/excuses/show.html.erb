@@ -1,7 +1,11 @@
 <h1>Your excuse is...</h1>
 	<p><%= @excuse.name %></p>
 	
-	<%= image_tag(@excuse.image, id: "excuse_image") %>
+	<div class = "row">
+		<div class = "col-md-12">
+			<%= image_tag(@excuse.image, id: "excuse_image", class: "center-block") %>
+		</div>
+	</div>
 <!-- Insert our ruby image tag here -->
 
 <h2>Say this:</h2>
@@ -12,10 +16,13 @@
 
 <h2>Your alibi's soundbyte:</h2>
 
-<%= audio_tag(@excuse.sound_fx, controls: true, loop: true) %>
+
+<%= audio_tag(@excuse.sound_fx, controls: true, loop: true, class: "center-block") %>
 
 <!-- Insert button to play and an option to loop -->
 
 <h1>Generate Again</h1>
 
-<%= link_to "All Excuses", '/excuses', class: "btn btn-lg btn-primary" %>
+<div class = "all-excuses"> 
+	<%= link_to "All Excuses", '/excuses', class: "btn btn-lg btn-primary" %>
+</div>	

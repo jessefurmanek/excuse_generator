@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
 	validates :password, length: { minimum: 6 }, allow_blank: true
 	before_save :downcase_email
+
+	  #makes email lower-case
+  def downcase_email
+    self.email = email.downcase
+  end
 end
