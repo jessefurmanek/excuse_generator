@@ -40,6 +40,16 @@ textarea {
   margin-bottom: 10px;
 }
 
+.jumbotron {
+  background: url(passedout.jpg) center no-repeat;
+  background-size: 100%;
+  height: 450px;
+}
+
+#shadow {
+    box-shadow: inset 0 2em 1em -2em #888;
+}
+
 /* header */
 
 header {
@@ -58,12 +68,12 @@ header li {
 }
 
 header a {
-  color: #FF6B00;
+  color: #B24B00;
   font-weight: bold;
 }
 
  header a:hover {
-  color: #B24B00;
+  color: #FF6B00;
   text-decoration: none;
   font-weight: bold;
 }
@@ -126,7 +136,19 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
+  background: #888;
 }
+
+footer ul {
+  list-style-type: none;
+}
+
+footer li {
+  text-decoration: none;
+  display: inline;
+}
+
+
 
 
 

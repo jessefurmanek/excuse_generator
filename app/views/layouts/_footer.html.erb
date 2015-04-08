@@ -1,2 +1,13 @@
-<!--<footer>-->
-<!--</footer>-->
+<footer>
+	<div class="container">
+		<ul class="pull-right">
+			<li><a href="#">About</a></li>
+			  <% if logged_in? %>
+			<li><%= link_to "Log Out", logout_path %></li>
+			  <% else %>
+			<li><%= link_to "Signup", signup_path %></li>
+			<li><%= link_to "Log in", login_path %></li>
+			  <% end %>
+		</ul>
+	</div>
+</footer>

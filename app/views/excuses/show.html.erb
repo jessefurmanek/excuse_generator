@@ -1,51 +1,55 @@
-<h1>Your excuse is...</h1>
-	<p><%= @excuse.name %></p>
-	
-	<div class = "row">
-		<div class = "col-md-12">
-			<%= image_tag(@excuse.image, id: "excuse_image", class: "center-block") %>
+<div id="shadow">
+	<div class="container">
+		<h1>Your excuse is...</h1>
+			<p><%= @excuse.name %></p>
+			
+			<div class = "row">
+				<div class = "col-md-12">
+					<%= image_tag(@excuse.image, id: "excuse_image", class: "center-block") %>
+				</div>
+			</div>
+		<!-- Insert our ruby image tag here -->
+
+		<h2>Say this:</h2>
+
+		<p><%= @excuse.template %></p>
+
+		<!-- Insert ruby tag for DB here -->
+
+		<h2>Your alibi's soundbyte:</h2>
+
+
+		<%= audio_tag(@excuse.sound_fx, controls: true, loop: true, class: "center-block") %>
+
+		<!-- Insert button to play and an option to loop -->
+
+		<div class = "regen-excuses"> 
+			<!-- is_realistic passes the current excuse parameter back to the controller -->
+			<%= link_to "Generate Again", {controller: "excuses", action: "regenerate", is_realistic: @excuse.is_realistic}, {class: "btn btn-lg btn-primary"} %>
+		</div>	
+
+		<div class = "all-excuses"> 
+			<%= link_to "All Excuses", '/excuses', class: "btn btn-lg btn-primary" %>
+		</div>	
+
+		<div class = "rating">
+			<p>Your rating</p>
+			<div id="user_star"></div>
 		</div>
+
+		<script>;
+
+		  $('#user_star').raty({
+		    score: <%= @current_user_rating.score %>,
+		    path: '/assets',
+		    click: function(score, evt) {
+		      $.ajax({
+		        url: '/ratings/' + <%= @current_user_rating_id %>,
+		        type: 'PATCH',
+		        data: { score: score }
+		      });
+		    }
+		  });
+		</script>
 	</div>
-<!-- Insert our ruby image tag here -->
-
-<h2>Say this:</h2>
-
-<p><%= @excuse.template %></p>
-
-<!-- Insert ruby tag for DB here -->
-
-<h2>Your alibi's soundbyte:</h2>
-
-
-<%= audio_tag(@excuse.sound_fx, controls: true, loop: true, class: "center-block") %>
-
-<!-- Insert button to play and an option to loop -->
-
-<div class = "regen-excuses"> 
-	<!-- is_realistic passes the current excuse parameter back to the controller -->
-	<%= link_to "Generate Again", {controller: "excuses", action: "regenerate", is_realistic: @excuse.is_realistic}, {class: "btn btn-lg btn-primary"} %>
-</div>	
-
-<div class = "all-excuses"> 
-	<%= link_to "All Excuses", '/excuses', class: "btn btn-lg btn-primary" %>
-</div>	
-
-<div class = "rating">
-	<p>Your rating</p>
-	<div id="user_star"></div>
 </div>
-
-<script>;
-
-  $('#user_star').raty({
-    score: <%= @current_user_rating.score %>,
-    path: '/assets',
-    click: function(score, evt) {
-      $.ajax({
-        url: '/ratings/' + <%= @current_user_rating_id %>,
-        type: 'PATCH',
-        data: { score: score }
-      });
-    }
-  });
-</script>

@@ -8,10 +8,12 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,300italic,400italic' rel='stylesheet' type='text/css'>
 	</head>
+	<%= render 'layouts/header' %>
 	<body>
-		<%= render 'layouts/header' %>
+		
 	    <%= yield %>
-	    <%= render 'layouts/footer' %>
+	    
 	</body>
+	<%= render 'layouts/footer' %>
 </html>
 

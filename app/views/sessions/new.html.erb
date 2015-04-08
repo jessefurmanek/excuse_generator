@@ -1,15 +1,16 @@
-<h1>Login</h1>
+<div id="shadow">	
+	<h1>Login</h1>
 
- <div class="container">
+	<div class="container">
 
- 	<%= bootstrap_form_tag url: login_path, method: "post" do |f| %>
-        <%= f.email_field :email, class: 'form_control' %>
-        <%= f.password_field :password, class: 'form_control'%>
-        <%= f.submit "Log in", class: "btn" %>
-      <% end %>
-    
- </div>
-
+	 	<%= bootstrap_form_tag url: login_path, method: "post" do |f| %>
+	        <%= f.email_field :email, class: 'form_control' %>
+	        <%= f.password_field :password, class: 'form_control'%>
+	        <%= f.submit "Log in", class: "btn" %>
+	      <% end %>
+	    
+	</div>
+</div>
 
     
     
