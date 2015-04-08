@@ -1,5 +1,5 @@
 class ExcusesController < ApplicationController
-	before_action :logged_in_user, only: :new
+  before_action :logged_in_redirect
 
   def new
   end
@@ -21,7 +21,10 @@ class ExcusesController < ApplicationController
   end
 
 	def create  #determine which excuse based on filter
-		if params[:is_realistic]=='realistic'
+		if params[:is_realistic].nil? || params[:is_late].nil?
+      flash[:danger] = "Please select all parameters"
+      redirect_to '/excuses/new'
+    elsif params[:is_realistic]=='realistic'
 			realistic_excuses = Excuse.where(is_realistic: 1)
 
 			random_number = rand(realistic_excuses.length)
@@ -65,25 +68,17 @@ class ExcusesController < ApplicationController
     @current_user = current_user
   end
 
-  def logged_in?
-    !current_user.nil?
-  end
-
-  def current_user
-    if (user_id = session[:user_id])
-      @current_user ||= User.find_by(id: user_id)
-    end
-  end
-
-  def current_user?(user)
-    user == current_user
-  end
 
    private
   
  	def excuse_params
   	   params.require(:excuses).permit(:name, :is_realistic, :template, :image, :sound_fx)
-    end
-  	
+  end
+  
+  def logged_in_redirect
+    if current_user.nil?
+      redirect_to "/"
+    end  
+  end  	
 
 end

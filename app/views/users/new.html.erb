@@ -1,5 +1,12 @@
 <div class="shadow">	
-	<h1>Signup</h1>
+  <div class = "row">
+    <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>">
+          <p><%= message %></p>
+        </div>
+    <% end %>
+  </div>
+	<h1 class = "title_text">Signup</h1>
 
     <div class="container">
       <%= bootstrap_form_for(@user) do |f| %>

@@ -9,9 +9,15 @@ class UsersController < ApplicationController
 
 		if @user.save
 			session[:user_id]=@user.id
+			flash[:success] = "Succesfully created account."
 			redirect_to('/excuses/new')
 		else 
-			redirect_to(root_path)
+			if params[:user][:password].length<6
+					flash[:danger] = "Please use a password at least 6 characters long"
+			else
+					flash[:danger] = "Could not create account.  Please contact our support team at support@example.com"
+			end					
+			redirect_to new_user_path
 		end
 	end
 

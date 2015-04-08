@@ -1,26 +1,38 @@
 <div class="shadow">
-  <div class="container">
-    <h1>Fabricate Your Alibi</h1>
-    <%= form_tag '/excuses', method: "post" do |f| %>
-    <p>Plausible?</p>
-    <ul>
-      <%= radio_button_tag :is_realistic, 'realistic'%> 
-      <%= label :is_realistic, 'Yes please' %>
-      <%= radio_button_tag :is_realistic, 'unrealistic' %>
-      <%= label :is_realistic, 'Nope' %>
-    	
-    </ul>
-
-    <p>When will you show up?</p>
-    <ul>
-      <%= radio_button_tag :is_late, 'just_late'%> 
-      <%= label :is_late, 'Late' %>
-      <%= radio_button_tag :is_late, 'never_going' %>
-      <%= label :is_late, 'Never' %>
-    </ul>
-    	
-    <%= submit_tag "Generate" %>
-
+    <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>">
+          <p><%= message %></p>
+        </div>
     <% end %>
+  <div class="container choose_your_excuse">
+    <h1 class= "title_text">Fabricate Your Alibi</h1>
+    <div class = "col-md-4">
+    </div>
+    <div class = "col-md-4 choose_your_excuse_buttons">
+    <%= form_tag '/excuses', method: "post" do |f| %>
+      <div class = "row">
+        <h3>When will you show up?</h3>
+          <ul>
+            <%= radio_button_tag :is_late, 'just_late'%> 
+            <%= label :is_late, 'Late' %>
+            <%= radio_button_tag :is_late, 'never_going' %>
+            <%= label :is_late, 'Never' %>
+          </ul>
+      </div>
+      <div class = "row">
+          <h3>Plausible?</h3>
+            <ul>
+              <%= radio_button_tag :is_realistic, 'realistic'%> 
+              <%= label :is_realistic, 'Yes please' %>
+              <%= radio_button_tag :is_realistic, 'unrealistic' %>
+              <%= label :is_realistic, 'Nope' %>
+              
+            </ul>
+      </div>
+          <%= submit_tag "Generate" %>
+    </div>
+    <% end %>
+    <div class = "col-md-4">
+    </div>
   </div>
 </div>

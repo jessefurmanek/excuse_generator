@@ -63,11 +63,9 @@ textarea {
 
 .shadow {
     box-shadow: inset 0 2em 1em -2em #888;
+     min-height: 80vh;
 }
 
-.btn {
-  margin: 60px;
-}
 
 .btn a {
   padding: 15px 45px;
@@ -86,7 +84,7 @@ textarea {
 
 header {
   background-color: #00E8FF;
-  height: 60px;
+  height: 10vh;
   line-height: 60px;
 }
 
@@ -152,12 +150,18 @@ p {
 
 .regen-excuses{
   text-align: center;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
 }
 
 .rating{
   text-align: center;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+#user_star{
+  margin-bottom: 2vh;
 }
 
 #homeoverride {
@@ -165,13 +169,31 @@ p {
   text-shadow: 1px 1px 5px #888;
 }
 
+.title_text{
+  padding-top: 3vh;
+  margin-top: 0 !important;
+}
+
+.alert{
+  height: 10vh;
+}
+
+.choose_your_excuse{
+  text-align:center;
+}
+
+.choose_your_excuse_buttons ul{
+  padding-left:0;
+}
+
 
 /* footer */
 
 footer {
   background: #0FA4B2;
-  height: 60px;
+  height: 10vh;
   line-height: 60px;
+  position:relative;
 }
 
 footer ul {
