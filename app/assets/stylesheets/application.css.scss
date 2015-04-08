@@ -32,6 +32,14 @@ textarea {
   resize: vertical;
 }
 
+.secondary {
+  height: 350px;
+}
+
+.call2action {
+  height: 250px;
+}
+
 .center {
   text-align: center;
 }
@@ -46,8 +54,29 @@ textarea {
   height: 450px;
 }
 
-#shadow {
+#homeshadow {
+    box-shadow: inset 0 2em 1em -2em #000;
+}
+
+.shadow {
     box-shadow: inset 0 2em 1em -2em #888;
+}
+
+.btn {
+  margin: 60px;
+}
+
+.btn a {
+  padding: 15px 45px;
+  background: #FF6B00;
+  color: #FFF;
+}
+
+.btn a:hover {
+  padding: 15px 45px;
+  background: #B24B00;
+  color: #FFF;
+  text-decoration: none;
 }
 
 /* header */
@@ -128,14 +157,18 @@ p {
   text-align: center;
 }
 
+#homeoverride {
+  color: #fff;
+  text-shadow: 1px 1px 5px #888;
+}
+
 
 /* footer */
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
   background: #0FA4B2;
+  height: 60px;
+  line-height: 60px;
 }
 
 footer ul {
