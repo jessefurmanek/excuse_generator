@@ -20,9 +20,11 @@
 
 /* universal */
 
-html {
-  font-family: 'Josefin Sans', sans-serif;
+body {
+  font-family: 'Josefin Sans', sans-serif !important;
+  font-size: 1.4em !important;
 }
+
 
 section {
   overflow: auto;
@@ -32,8 +34,8 @@ textarea {
   resize: vertical;
 }
 
-.secondary {
-  height: 350px;
+.secondary{
+  margin-bottom:2vh;
 }
 
 .call2action {
@@ -67,6 +69,10 @@ textarea {
 }
 
 
+.cat_image{
+  width:50%;
+}
+
 .btn a {
   padding: 15px 45px;
   background: #FF6B00;
@@ -86,6 +92,7 @@ header {
   background-color: #00E8FF;
   height: 10vh;
   line-height: 60px;
+  font-size: 1.4em;
 }
 
 header ul {
