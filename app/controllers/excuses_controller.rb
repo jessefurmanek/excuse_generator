@@ -62,6 +62,7 @@ class ExcusesController < ApplicationController
 
   def index
     @excuses = Excuse.all
+    @current_user = current_user
   end
 
   def logged_in?

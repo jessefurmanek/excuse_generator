@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get  'logout'        =>      'sessions#destroy'
   get  'excuses/new'
   get  'excuses/all'  =>      'excuses#index'
-  get  'excuses/regenerate'  =>      'excuses#regenerate'
-  post 'ratings/update'
+  get  'excuses/regenerate'  =>  'excuses#regenerate'
+  post 'ratings/update' => 'ratings#update'
 
   resources :users
   resources :excuses
