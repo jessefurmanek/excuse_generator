@@ -135,8 +135,7 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #777;
-  background: #888;
+  background: #0FA4B2;
 }
 
 footer ul {
@@ -146,6 +145,16 @@ footer ul {
 footer li {
   text-decoration: none;
   display: inline;
+  padding-left: 20px;
+}
+
+footer a {
+  color: #00E8FF;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: #B24B00;
 }
 
 

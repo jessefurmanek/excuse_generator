@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get  'excuses/new'
   get  'excuses/all'  =>      'excuses#index'
   get  'excuses/regenerate'  =>      'excuses#regenerate'
+  get  'profile'      =>        'users#user'
+  get  'about'        =>      'pages#about'          
   post 'ratings/update'
 
   resources :users
