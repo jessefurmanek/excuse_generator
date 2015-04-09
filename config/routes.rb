@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
   
-  root 'pages#home'
-  get  'signup'        =>      'users#new'
-  get  'login'         =>      'sessions#new'
-  post 'login'         =>      'sessions#create'
-  get  'logout'        =>      'sessions#destroy'
+  root 'pages#home' 
+  get  'signup'                 =>           'users#new'
+  get  'login'                  =>           'sessions#new'
+  post 'login'                  =>           'sessions#create'
+  get  'logout'                 =>           'sessions#destroy'
   get  'excuses/new'
-  get  'excuses/all'  =>      'excuses#index'
-
-  get  'excuses/regenerate'  =>      'excuses#regenerate'
-  get  'profile'      =>        'users#user'
-  get  'about'        =>      'pages#about'          
+  get  'excuses/all'            =>           'excuses#index'
+  get  'excuses/regenerate'     =>           'excuses#regenerate'
+  get  'excuses/realistic'      =>           'excuses#realistic'
+  get  'excuses/non_realistic'  =>           'excuses#non_realistic'
+  get  'profile'                =>           'users#user'
+  get  'about'                  =>           'pages#about'          
   post 'ratings/update'
 
 

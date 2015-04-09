@@ -68,6 +68,15 @@ class ExcusesController < ApplicationController
     @current_user = current_user
   end
 
+  def realistic
+    @excuses = Excuse.where(is_realistic: 1)
+    puts @excuses
+  end 
+
+  def non_realistic
+    @excuses = Excuse.where(is_realistic: 0)
+    puts @excuses
+  end
 
    private
   
