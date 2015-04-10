@@ -1,16 +1,23 @@
-    <%= render 'excuses/navigation' %>
+<div class="excuses_main shadow">
+    <div class="container">
+            <h1>Excuses</h1>
+
+        <p>See all the realitistic and non-realistic excuses you can use</p>
+        <div class="border"></div>
+        <div class="button_position">
+            <ul class="nav nav-pills">
+                <li class="nav-consumer"><%= link_to "All", '/excuses' %></li>
+                <li class="nav-all active"><%= link_to "Realistic", '/excuses/realistic' %></li>
+                <li class="nav-consumer"><%= link_to "Non-Realistic", '/excuses/non_realistic' %></li>
+            </ul>
+</div>
 
      <div class = "row">   
             <div class="col-md-4">
                 <h1>Realistic Excuse:</h1>
             </div>
-            <div class="col-md-4">            
-                <h2>What to say:</h2>
-            </div>
-            <div class="col-md-4">
-                <h2>Rating:</h2>
-            </div>
-        </div>
+                <%= render 'excuses/excuse_title' %>
+    </div>
         
     <% @excuses.each do |excuse| %>
         <div class = "row">

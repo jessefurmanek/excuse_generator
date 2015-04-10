@@ -11,13 +11,10 @@ gem 'pry'
 gem 'bootstrap_form'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
-# Use Unicorn as the app server
-gem 'unicorn'
 
 group :development, :test do
-  # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-  
+  gem 'byebug',      '3.4.0'
 end
 
 group :production do
