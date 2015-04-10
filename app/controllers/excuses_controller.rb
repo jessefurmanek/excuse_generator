@@ -16,8 +16,6 @@ class ExcusesController < ApplicationController
     else
       @current_user_rating_id = @current_user_rating.id
     end
-
-
   end
 
 	def create  #determine which excuse based on filter
@@ -70,15 +68,13 @@ class ExcusesController < ApplicationController
 
   def realistic
     @excuses = Excuse.where(is_realistic: 1)
-    puts @excuses
   end 
 
   def non_realistic
     @excuses = Excuse.where(is_realistic: 0)
-    puts @excuses
   end
 
-   private
+  private
   
  	def excuse_params
   	   params.require(:excuses).permit(:name, :is_realistic, :template, :image, :sound_fx)

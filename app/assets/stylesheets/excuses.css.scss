@@ -3,9 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 .excuses_main h1, p {
 	 text-align: center;
 }
@@ -16,5 +13,9 @@
 
 .button_position {
 	padding-top: 40px;
+	padding-left: 450px;
+	padding-bottom: 20px;
 }
+
+
 
