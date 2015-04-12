@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'login'                  =>           'sessions#create'
   get  'logout'                 =>           'sessions#destroy'
   get  'excuses/new'
-  get  'excuses/all'            =>           'excuses#index'
+  get  'excuses'                =>           'excuses#index'
   get  'excuses/regenerate'     =>           'excuses#regenerate'
   get  'excuses/realistic'      =>           'excuses#realistic'
   get  'excuses/non_realistic'  =>           'excuses#non_realistic'
