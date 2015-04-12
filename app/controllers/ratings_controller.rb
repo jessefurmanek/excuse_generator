@@ -16,7 +16,6 @@ class RatingsController < ApplicationController
     end
   end
 
-
 		private 
 		def ratings_params
 			params.require(:user_id, :excuse_id).permit(:score)
