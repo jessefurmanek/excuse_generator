@@ -10,6 +10,7 @@
 
     <div class="container">
       <%= bootstrap_form_for(@user) do |f| %>
+        <%= f.text_field :name, label: "Name" %>
         <%= f.email_field :email, class: 'form_control' %>
         <%= f.password_field :password, class: 'form_control'%>
         <%= f.password_field :password_confirmation, class: 'form_control' %>
