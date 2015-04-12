@@ -38,8 +38,8 @@
                 </p>
             </div>
             <div class="col-md-4">
-                    <% @excuse_name = excuse.name.to_s %>
-                    <%= content_tag(:div, "", id: excuse.name, class: "rating" ) %>  
+                    <% @excuse_name = (excuse.name).downcase.tr(" ", "_") %>
+                    <%= content_tag(:div, "", id: (excuse.name).downcase.tr(" ", "_"), class: "rating" ) %>  
                     <% if !@current_user.nil? %>
                         <% if !Rating.find_by(user_id: @current_user.id, excuse_id: excuse.id).nil? %>
                             <% @rating = Rating.find_by(user_id: @current_user.id, excuse_id: excuse.id).score %>
