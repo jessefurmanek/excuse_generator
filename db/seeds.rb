@@ -14,7 +14,7 @@ e5 = Excuse.create(name: "Public Puke", is_realistic: 1, template: "Someone on t
 e6 = Excuse.create(name: "Hiding Hiccup", is_realistic: 1, template: "This guy confused me for someone that owes him money. Unfortunately, I'm still hiding from him.", image: "owes_money.jpg", sound_fx: "hiding_from_him.mp3")
 e7 = Excuse.create(name: "Toe Terror", is_realistic: 1, template: "I accidentally broke my neighbor's toe just now.", image: "broken_toe.jpg", sound_fx: "broke_neighbor_toe.mp3")
 e8 = Excuse.create(name: "Engorged Elbow", is_realistic: 1, template: "My left elbow has swollen to twice its size.", image: "elbow.jpg", sound_fx: "elbow.mp3")
-e9 = Excuse.create(name: "Crosseye Crisis", is_realistic: 1, template: "I crossed my eyes for my nephew and they won't uncross.", image: "crossed_eyes.jpg", sound_fx: "cross.eye.mp3")
+e9 = Excuse.create(name: "Crosseye Crisis", is_realistic: 1, template: "I crossed my eyes for my nephew and they won't uncross.", image: "crossed_eyes.jpg", sound_fx: "cross_eye.mp3")
 e10 = Excuse.create(name: "Pez Prediliction", is_realistic: 1, template: "I'm addicted to grape pez and it's really distracting me.", image: "pez.jpg", sound_fx: "grape_pez.mp3")
 e11 = Excuse.create(name: "Derelict Driver", is_realistic: 1, template: "I got in a cab and told the driver I was running late. He just got a speeding ticket. So, unfortunately, I'm going to be even later.", image: "cab.jpg", sound_fx: "speeding_ticket.mp3")
 e12 = Excuse.create(name: "Quirky Quarantine", is_realistic: 1, template: "I'm in quarantine until late next week.", image: "quarantine.jpg", sound_fx: "quarantine_next_week.mp3")
@@ -33,7 +33,7 @@ e24 = Excuse.create(name: "Ticking Timebomb", is_realistic: 1, template: "I just
 e25 = Excuse.create(name: "Food Fiend", is_realistic: 1, template: "I have food poisoning.", image: "foodpoison.jpg", sound_fx:"food_poisoning.mp3")
 e26 = Excuse.create(name: "Alligator Attack", is_realistic: 0, template: "An alligator ate two of my fingers.", image: "alligator.jpg", sound_fx: "alligator.mp3")
 
-e27 = Excuse.create(name: "AWOL Aunt", is_realistic: 0, template: "My aunt has been kidnapped by a drug cartel.", image: "drug_cartel.jpg", sound_fx: "drug_cartel.mp3.")
+e27 = Excuse.create(name: "AWOL Aunt", is_realistic: 0, template: "My aunt has been kidnapped by a drug cartel.", image: "drug_cartel.jpg", sound_fx: "drug_cartel.mp3")
 
 e28 = Excuse.create(name: "Detonated Dog", is_realistic: 0, template: "My dog spontaneously combusted.", image: "dog.jpg", sound_fx: "spontaneous_combust.mp3")
 
