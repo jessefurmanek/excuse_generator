@@ -29,5 +29,6 @@ class RatingsController < ApplicationController
       flash[:danger] = "Log in to view user profiles"
     end  
   end     
+
 end
 
