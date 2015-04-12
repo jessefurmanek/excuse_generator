@@ -1,21 +1,23 @@
 class ExcusesController < ApplicationController
-  before_action :logged_in_redirect
+
 
   def new
   end
 
   def show
-  	@excuse = Excuse.find_by(id: params[:id])
-    @user = current_user
-    @current_user_rating = Rating.find_by(user_id: @user.id, excuse_id: @excuse.id)
-    
-    if @current_user_rating == nil
-      #create a rating object 
-      @current_user_rating = Rating.create(user_id: @user.id, excuse_id: @excuse.id, score: 0)
-      @current_user_rating_id = @current_user_rating.id
-    else
-      @current_user_rating_id = @current_user_rating.id
-    end
+    	@excuse = Excuse.find_by(id: params[:id])
+      @user = current_user
+
+      if @user != nil
+        @current_user_rating = Rating.find_by(user_id: @user.id, excuse_id: @excuse.id)
+        if @current_user_rating == nil
+          #create a rating object 
+          @current_user_rating = Rating.create(user_id: @user.id, excuse_id: @excuse.id, score: 0)
+          @current_user_rating_id = @current_user_rating.id
+        else
+          @current_user_rating_id = @current_user_rating.id
+        end
+      end
   end
 
 	def create  #determine which excuse based on filter
@@ -80,10 +82,5 @@ class ExcusesController < ApplicationController
   	   params.require(:excuses).permit(:name, :is_realistic, :template, :image, :sound_fx)
   end
   
-  def logged_in_redirect
-    if current_user.nil?
-      redirect_to "/"
-    end  
-  end  	
 
 end

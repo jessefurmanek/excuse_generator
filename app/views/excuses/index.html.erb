@@ -1,3 +1,8 @@
+
+<div class="row alert alert-danger" style="display:none;">
+    <p>You're not logged in.  <a href="/login">Log in</a> to save your ratings.</p>
+</div>
+
  <div class="excuses_main shadow">
     <div class="container">
             <h1>Excuses</h1>
@@ -33,13 +38,14 @@
                 </p>
             </div>
             <div class="col-md-4">
-                    <% @excuse_name = excuse.name.to_s %>
-                    <%= content_tag(:div, "", id: excuse.name, class: "rating" ) %>  
-                    
-                    <% if !Rating.find_by(user_id: @current_user.id, excuse_id: excuse.id).nil? %>
-                        <% @rating = Rating.find_by(user_id: @current_user.id, excuse_id: excuse.id).score %>
-                    <% else %>
-                        <% @rating = Rating.create(user_id: @current_user.id, excuse_id: excuse.id, score: 0).score %>
+                    <% @excuse_name = (excuse.name).downcase.tr(" ", "_") %>
+                    <%= content_tag(:div, "", id: (excuse.name).downcase.tr(" ", "_"), class: "rating" ) %>  
+                    <% if !@current_user.nil? %>
+                        <% if !Rating.find_by(user_id: @current_user.id, excuse_id: excuse.id).nil? %>
+                            <% @rating = Rating.find_by(user_id: @current_user.id, excuse_id: excuse.id).score %>
+                        <% else %>
+                            <% @rating = Rating.create(user_id: @current_user.id, excuse_id: excuse.id, score: 0).score %>
+                        <% end %>
                     <% end %>
             </div>             
 
@@ -57,15 +63,27 @@
                 <% end %>,
         path: '/assets',
         click: function(score, evt) {
+          <%if !@current_user.nil? %>  
           $.ajax({
-            url: '/ratings/' + <% if !Rating.find_by(user_id: @current_user.id, excuse_id: excuse.id).nil? %>
-                                    <%= Rating.find_by(user_id: @current_user.id, excuse_id: excuse.id).id %>
-                               <% else %>     
-                                     <%= 0 %>
-                               <% end %>,
-            type: 'PATCH',
+            url: '/ratings/' +  <%if !@current_user.nil? %>
+                                    <% if !Rating.find_by(user_id: @current_user.id, excuse_id: excuse.id).nil? %>
+                                        <%= Rating.find_by(user_id: @current_user.id, excuse_id: excuse.id).id %>
+                                    <% else %>     
+                                        <%= 0 %>
+                                    <% end %>
+                                <% else %>
+                                    <%= 0 %>
+                                <% end %>,
+            type: <%if !@current_user.nil? %>
+                    '<%= j "PATCH" %>'
+                  <%else%>
+                    '<%= j "GET" %>'
+                  <%end%>,
             data: { score: score }
           });
+        <%else%>
+        $(".alert").show();
+        <%end%>  
         }
       });
     </script>

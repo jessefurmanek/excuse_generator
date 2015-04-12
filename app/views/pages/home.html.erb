@@ -1,11 +1,21 @@
+
+    <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>">
+          <p><%= message %></p>
+        </div>
+    <% end %>
+
 <div class="center jumbotron" id="homeshadow">
   <div class="container">
 	  <h1 id="homeoverride">No Excuse? No Problem!</h1>
 
 	  <p id="homeoverride">Running Late? Don't feel like going to work? Use No Excuse No Problem to generate an excuse.</p> 
-	  <p id="homeoverride">Join now to devise and track your alibi.</p>
+	  <p id="homeoverride">Join now to devise and track your alibi, or just create one.</p>
 	  <div class="btn">
 			<%= link_to "Sign Up", signup_path %>
+	  </div>
+	  	  <div class="btn">
+			<%= link_to "New Excuse", new_excuse_path %>
 	  </div>
   </div>
 </div>
