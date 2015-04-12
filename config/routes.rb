@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get  'excuses/regenerate'     =>           'excuses#regenerate'
   get  'excuses/realistic'      =>           'excuses#realistic'
   get  'excuses/non_realistic'  =>           'excuses#non_realistic'
-  get  'profile'                =>           'users#user'
+  get  'user'                   =>           'users#show'
   get  'about'                  =>           'pages#about'          
   post 'ratings/update'
 
