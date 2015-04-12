@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
 	def new
+		if params[:not_logged_in]
+			redirect_to login_path
+			follow_redirect!
+		end
 	end
 
 	def create

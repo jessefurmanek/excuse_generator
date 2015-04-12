@@ -32,15 +32,17 @@
 			<%= link_to "All Excuses", '/excuses', class: "btn btn-lg btn-primary" %>
 		</div>	
 
-		<div class = "rating">
-			<p>Your rating</p>
-			<div id="user_star"></div>
-		</div>
+		<%if !@current_user_rating.nil? %>  <!-- if you're not logged in -->
+			<div class = "rating">
+				<p>Your rating</p>
+				<div id="user_star"></div>
+			</div>
+		<% end %>
 
 		<script>;
 
 		  $('#user_star').raty({
-		    score: <%= @current_user_rating.score %>,
+		    score: <%=  if !@current_user_rating.nil? then @current_user_rating.score  else 0 end %>,
 		    path: '/assets',
 		    click: function(score, evt) {
 		      $.ajax({

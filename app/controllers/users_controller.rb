@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-	
+	before_action :logged_in_redirect, except: [:new, :create]
+
 	def new
 		@user = User.new
 	end
@@ -29,5 +30,11 @@ class UsersController < ApplicationController
 		def user_params
 			params.require(:user).permit(:email, :password, :password_confirmation)
 		end
-	
+
+	  def logged_in_redirect
+    if current_user.nil?
+      redirect_to "/"
+			flash[:danger] = "Log in to view user profiles"
+    end  
+  end  	
 end
