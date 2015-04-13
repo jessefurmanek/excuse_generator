@@ -27,8 +27,10 @@ class UsersController < ApplicationController
 	end 
 
 	def edit
-      @user = User.find(current_user)
-    end
+			puts "LOOK HERE LOOK HERE"
+			puts params
+      @user = User.find(current_user.id)
+   end
 
     def update
     	@user = User.find(current_user)
